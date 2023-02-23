@@ -1,0 +1,21 @@
+
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(16, 25px [col-start]);
+  }
+
+  .gridEffect {
+    background-color: bisque;
+  }
+
+  .gridEffect:hover {
+    background-color: aqua;
+  }
+
+  .gridBox {
+    color: blue;
+  }
+
+  .painted {
+    background-color: violet;
+  }

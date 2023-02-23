@@ -5,17 +5,17 @@
   }
 
   .gridEffect {
-    background-color: bisque;
+    
   }
 
   .gridEffect:hover {
-    background-color: aqua;
+    background-color: rgb(57, 108, 212);
   }
 
   .gridBox {
-    color: blue;
+    background-color: aliceblue;
   }
 
   .painted {
-    background-color: violet;
+    background-color: rgb(21, 20, 21);
   }

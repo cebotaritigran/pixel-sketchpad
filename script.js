@@ -5,15 +5,15 @@ const colorPicker = document.querySelector('#colorPicker');
 
 // Checking if the mouse button is down
 let mouseClick = false;
-
-let shadeColor = 0;
+let shadeColor = 10;
 function mouseDown() {
     mouseClick = true;
-    shadeColor += 5;
 }
 
 function mouseUp() {
     mouseClick = false;
+    shadeColor += 3;
+
 }
 
 const gridBoxSelect = document.querySelector('.gridContainer');
@@ -23,9 +23,9 @@ gridBoxSelect.addEventListener('mouseup', mouseUp)
 
 // pick color
 function pickColor() {
-
     colorPicker.setAttribute('value', this.value);
     let gridSystem = gridSize.value * gridSize.value
+    shadeColor = 0;
     manipulateGrid(gridSystem, this.value)
 
 }
@@ -37,10 +37,10 @@ let brushOn = false;
 function brushGrid() {
     if (brushOn) {
         brushOn = false;
-        brush.style.cssText = 'background-color: white;'
+        brush.classList.remove('buttonClicked')
     } else {
         brushOn = true;
-        brush.style.cssText = 'background-color: grey;'
+        brush.classList.add('buttonClicked')
     }
 }
 
@@ -53,10 +53,10 @@ let eraserOn = false;
 function eraseGrid() {
     if (eraserOn) {
         eraserOn = false;
-        eraser.style.cssText = 'background-color: white;'
+        eraser.classList.remove('buttonClicked')
     } else {
         eraserOn = true;
-        eraser.style.cssText = 'background-color: grey;'
+        eraser.classList.add('buttonClicked')
     }
 }
 
@@ -68,10 +68,10 @@ let rainbowOn = false;
 function rainbowGrid() {
     if (rainbowOn) {
         rainbowOn = false;
-        rainbow.style.cssText = 'background-color: white;'
+        rainbow.classList.remove('buttonClicked')
     } else {
         rainbowOn = true;
-        rainbow.style.cssText = 'background-color: grey;'
+        rainbow.classList.add('buttonClicked')
     }
 }
 
@@ -83,21 +83,32 @@ let shadeOn = false;
 function shadeGrid() {
     if (shadeOn) {
         shadeOn = false;
-        shade.style.cssText = 'background-color: white;'
+        shade.classList.remove('buttonClicked')
     } else {
         shadeOn = true;
-        shade.style.cssText = 'background-color: grey;'
+        shade.classList.add('buttonClicked')
     }
 }
 
 const shade = document.querySelector('#shade');
 shade.addEventListener('click', shadeGrid)
 
+// Reset button
+const reset = document.querySelector('#reset');
+reset.addEventListener('click', () => {
+    const allGridBoxes = document.querySelectorAll('.gridBox');
+    allGridBoxes.forEach(gridBox => {
+        gridBox.setAttribute('style', '');
+        shadeColor = 0;
+    });
+})
+
 // Adds a class to each and every div we created only if mouse button is down and if mouse is over that div
 // which we check with event listener on that div
 // and paint the that div to black or erase if eraser button is on
 
 function manipulateGrid(gridSystem, color) {
+    
     const gridBox = document.querySelectorAll('.gridBox');
     function manipulateGridBox() {
         if (mouseClick == true && brushOn == true && eraserOn == false) {
@@ -107,7 +118,6 @@ function manipulateGrid(gridSystem, color) {
             this.style.cssText = `background-color: ${color};filter: opacity(${shadeColor}%)`
         }
         if (mouseClick == true && eraserOn == true && brushOn == false) {
-            this.classList.remove('paintedGrid');
             this.style.cssText = `background-color: aliceblue;`
         }
         if (mouseClick == true && rainbowOn == true && brushOn == false && eraserOn == false) {
@@ -116,9 +126,11 @@ function manipulateGrid(gridSystem, color) {
             this.style.cssText = `background-color: ${randomColor}`
         }
     }
+
     for (let i = 0; i < gridSystem; i++) {
         gridBox[i].addEventListener('mouseover', manipulateGridBox);
     }
+
 }
 
 // we add an event listener to our input range html element and whenever there is an input we go ahead and clear

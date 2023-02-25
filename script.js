@@ -8,6 +8,7 @@ let mouseClick = false;
 let shadeColor = 10;
 function mouseDown() {
     mouseClick = true;
+    shadeColor += 3;
 }
 
 function mouseUp() {

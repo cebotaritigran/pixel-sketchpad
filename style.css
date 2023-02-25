@@ -7,37 +7,69 @@ body {
   padding: 0;
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  gap: 50px;
   flex-direction: column;
-  background-color: #14477e;
+  background-color: #1b1a21;
 }
 
 .title {
+  margin-top: 0;
+  padding: 10px;
   font-size: 62px;
-  font-weight: 600;
-  color:#fa4c89 ;
-
+  font-weight: 560;
+  background-color: rgb(37, 43, 51);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow:2px 2px #ff3b3b;
+  cursor:default;
 }
+
+.title:hover{
+  text-shadow:2px 2px #43adfe;
+}
+
 
 .container {
   display: flex;
-  border-radius: 20px;
-  background-color: #1d8ad2;
-  padding: 10px 40px;
-  max-width: 100vh;
+  justify-content: center;
+
+  flex: 1;
+  
 }
 
 .main {
 
-  flex: 1 0 80vh;
-
-  min-height: 80vh;
+  flex: 1 0 0;
+  background-color: rgb(37, 43, 51);
+  padding: 20px;
+  border-radius: 10px;
   max-width: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+.footer{
+  font-size: 36px;
+  background-color: rgb(37, 43, 51);
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+a{
+  text-decoration: none;
+  color: #ffffff;
+  text-shadow:1px 1px #ff3b3b;
+}
+
+a:hover{
+  color: #ffffff;
+  text-shadow:2px 2px #0087e2;
 }
 
 .buttons {
@@ -48,27 +80,61 @@ body {
 }
 
 button{
-  font-size: 24px;
-  background-color: #fa4c89;
+  width: 200px;
+  font-size: 26px;
+  border: none;
+  background-color: #0087e2;
   color:#ffffff;
+  text-shadow:2px 2px #ff3b3b;
+}
+
+button:hover{
+  background-color: #ff3b3b;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  text-shadow:2px 2px #3b96ff;
 }
 
 .colorPicker{
   border: none;
-  min-width: 130px;
+  min-width: 200px;
   min-height: 130px;
-  background-color: #14477e;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.colorPicker:hover{
+  background-color: #ff3b3b;
+}
+
+.gridSize{
+  appearance: none;
+  border-radius: 40px;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.gridSize:hover{
+  background-color: #ffffff;
 }
 
 .gridSizeShow{
   margin: 0;
   padding: 0;
-  font-size: 32px;
+  font-size: 42px;
+  color: #ffffff;
   text-align: center;
+  text-shadow:2px 2px #ff3b3b;
+  cursor:default;
+}
+
+.gridSizeShow:hover{
+  text-shadow:2px 2px #3b79ff;
 }
 
 .buttonClicked {
-  background-color: #2a72be;
+  background-color: #133253;
+  border: 1px solid white;
 }
 
 .sketchPad {
@@ -80,6 +146,7 @@ button{
   display: grid;
   width: 500px;
   height: 500px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 400px) {
@@ -97,7 +164,7 @@ button{
 }
 
 .gridBox:hover {
-  background-color: rgb(57, 108, 212);
+  background-color: rgb(255, 72, 109);
 }
 
 .paintedGrid {

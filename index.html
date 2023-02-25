@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +9,14 @@
     <link rel="stylesheet" href="./style.css">
     <title>Pixel Sketchpad</title>
 </head>
+
 <body>
-    <div class="main"></div>
-    <div id="gridContainer" class="gridContainer" draggable="false">
+    <div class="main">
+        <input type="range" min="1" max="64" value="16" id="gridSize">
+        <p id="gridSizeShow"></p>
+        <div id="gridContainer" class="gridContainer" ondragstart="return false;">
+        </div>
     </div>
 </body>
+
 </html>

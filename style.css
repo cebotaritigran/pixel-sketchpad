@@ -1,21 +1,27 @@
+.gridContainer {
+  display: grid;
+  width: 500px;
+  height: 500px;
+}
 
+@media screen and (max-width: 400px) {
   .gridContainer {
-    display: grid;
-    grid-template-columns: repeat(16, 25px [col-start]);
+    width: 300px;
+    height: 300px;
   }
+}
 
-  .gridEffect {
-    
-  }
+.gridBox {
+  background-color: aliceblue;
+  border: 0px solid black;
+  height: 1fr;
+  width: 1fr;
+}
 
-  .gridEffect:hover {
-    background-color: rgb(57, 108, 212);
-  }
+.gridBox:hover {
+  background-color: rgb(57, 108, 212);
+}
 
-  .gridBox {
-    background-color: aliceblue;
-  }
-
-  .painted {
-    background-color: rgb(21, 20, 21);
-  }
+.paintedGrid {
+  background-color: rgb(21, 20, 21);
+}

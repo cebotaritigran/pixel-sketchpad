@@ -1,50 +1,57 @@
+const gridSize = document.querySelector('#gridSize');
+const gridSizeShow = document.querySelector('#gridSizeShow');
 const gridContainer = document.querySelector('#gridContainer');
-let gridSystem = 16*16;
-function createGrid() {
-    const gridContainer = document.querySelector('#gridContainer');
+
+let mouseClick = false;
+
+function click() {
+    mouseClick = true;
+}
+
+function click2() {
+    mouseClick = false;
+}
+
+function paintGrid(gridSystem) {
+    const gridBox = document.querySelectorAll('.gridBox');
+    function paintGridBox() {
+        if (mouseClick == true) {
+            this.classList.add('paintedGrid');
+        }
+    }
+    for (let i = 0; i < gridSystem; i++) {
+        gridBox[i].addEventListener('mouseover', paintGridBox);
+    }
+}
+
+gridSize.addEventListener('input', function (e) {
+    gridContainer.replaceChildren();
+    let gridSystem = gridSize.value * gridSize.value
+    gridContainer.style.cssText = `grid-template-columns: repeat(${gridSize.value}, 1fr [col-start]);`
+    gridSizeShow.innerText = `${gridSize.value} x ${gridSize.value}`
     for (let i = 0; i < gridSystem; i++) {
         const div = document.createElement('div');
-        div.style.cssText = "border: 0px solid black; height: 25px; width: 25px";
-        div.classList.add('gridEffect', 'gridBox');
-        div.setAttribute("id", i);
+        div.classList.add('gridBox');
         gridContainer.appendChild(div);
     }
+    paintGrid(gridSystem);
+});
+
+function createGrid() {
+    gridContainer.style.cssText = `grid-template-columns: repeat(${gridSize.value}, 1fr [col-start]);`
+    gridSizeShow.innerText = `${gridSize.value} x ${gridSize.value}`
+    for (let i = 0; i < 256; i++) {
+        const div = document.createElement('div');
+        div.classList.add('gridBox');
+        gridContainer.appendChild(div);
+    }
+    paintGrid(256);
 }
 
 createGrid();
-let x = false;
-    function click() {
-        if(x == true) {
-            x = false;
-        } else {
-            x = true;
-        }
-    }
-function paintGrid() {
-    const body = document.querySelector('body');
-    const gridBox = document.querySelectorAll('.gridBox');
-    
-    
-    function paintGridBox() {
-        if(x == true){
-            this.classList.add('painted');
-        }
-        
-    }
-    for(let i = 0; i < gridSystem; i++){
-        gridBox[i].addEventListener('mouseover', paintGridBox);
-    }
-    
 
-    /*
-    for (const box of gridBox) {
-        box.addEventListener('mouseover', paintGridBox);
-    }
-    */
+const gridBoxSelect = document.querySelector('.gridContainer');
 
-}
-
-
-paintGrid();
-window.addEventListener('click', click)
+gridBoxSelect.addEventListener('mousedown', click)
+gridBoxSelect.addEventListener('mouseup', click2)
 

@@ -14,7 +14,7 @@ body {
   background-color: rgb(41, 53, 67);
 }
 
-.containerContent{
+.containerContent {
   display: flex;
   flex-direction: column;
 }
@@ -27,12 +27,12 @@ body {
   font-weight: 560;
   color: #ffffff;
   display: flex;
-  text-shadow:2px 3px #ff3b3b;
-  cursor:default;
+  text-shadow: 2px 3px #ff3b3b;
+  cursor: default;
 }
 
-.title:hover{
-  text-shadow:3px 3px #43adfe;
+.title:hover {
+  text-shadow: 3px 3px #43adfe;
 }
 
 
@@ -42,7 +42,7 @@ body {
   align-items: center;
   flex-direction: column;
   flex: 1;
-  
+
 }
 
 .main {
@@ -57,10 +57,10 @@ body {
   align-items: center;
   gap: 20px;
   box-shadow: 15px 15px rgb(0, 0, 0);
-  
+
 }
 
-.footer{
+.footer {
   font-size: 36px;
 
   margin-top: 10px;
@@ -68,16 +68,16 @@ body {
   justify-content: flex-end;
 }
 
-a{
+a {
   text-align: left;
   text-decoration: none;
   color: #ffffff;
-  text-shadow:1px 1px #ff3b3b;
+  text-shadow: 1px 1px #ff3b3b;
 }
 
-a:hover{
+a:hover {
   color: #ffffff;
-  text-shadow:2px 2px #0087e2;
+  text-shadow: 2px 2px #0087e2;
 }
 
 .buttons {
@@ -87,23 +87,23 @@ a:hover{
   gap: 20px;
 }
 
-button{
+button {
   width: 200px;
   font-size: 26px;
   border: none;
   background-color: #0087e2;
-  color:#ffffff;
-  text-shadow:2px 2px #ff3b3b;
+  color: #ffffff;
+  text-shadow: 2px 2px #ff3b3b;
 }
 
-button:hover{
+button:hover {
   background-color: #ff3b3b;
   color: rgb(255, 255, 255);
   cursor: pointer;
-  text-shadow:2px 2px #3b96ff;
+  text-shadow: 2px 2px #3b96ff;
 }
 
-.colorPicker{
+.colorPicker {
   border: none;
   min-width: 200px;
   min-height: 130px;
@@ -111,33 +111,33 @@ button:hover{
   cursor: pointer;
 }
 
-.colorPicker:hover{
+.colorPicker:hover {
   background-color: #ff3b3b;
 }
 
-.gridSize{
+.gridSize {
   appearance: none;
   border-radius: 40px;
   background-color: #000000;
   cursor: pointer;
 }
 
-.gridSize:hover{
+.gridSize:hover {
   background-color: #ffffff;
 }
 
-.gridSizeShow{
+.gridSizeShow {
   margin: 0;
   padding: 0;
   font-size: 42px;
   color: #ffffff;
   text-align: center;
-  text-shadow:2px 2px #ff3b3b;
-  cursor:default;
+  text-shadow: 2px 2px #ff3b3b;
+  cursor: default;
 }
 
-.gridSizeShow:hover{
-  text-shadow:2px 2px #3b79ff;
+.gridSizeShow:hover {
+  text-shadow: 2px 2px #3b79ff;
 }
 
 .buttonClicked {
@@ -154,7 +154,7 @@ button:hover{
   display: grid;
   width: 500px;
   height: 500px;
-  cursor:default;
+  cursor: default;
 }
 
 @media screen and (max-width: 400px) {

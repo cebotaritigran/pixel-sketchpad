@@ -39,6 +39,12 @@ function brushGrid() {
         brush.classList.remove('buttonClicked')
     } else {
         brushOn = true;
+        eraserOn = false;
+        eraser.classList.remove('buttonClicked')
+        rainbowOn = false;
+        rainbow.classList.remove('buttonClicked')
+        shadeOn = false;
+        shade.classList.remove('buttonClicked')
         brush.classList.add('buttonClicked')
     }
 }
@@ -55,6 +61,12 @@ function eraseGrid() {
         eraser.classList.remove('buttonClicked')
     } else {
         eraserOn = true;
+        brushOn = false;
+        brush.classList.remove('buttonClicked')
+        rainbowOn = false;
+        rainbow.classList.remove('buttonClicked')
+        shadeOn = false;
+        shade.classList.remove('buttonClicked')
         eraser.classList.add('buttonClicked')
     }
 }
@@ -70,6 +82,12 @@ function rainbowGrid() {
         rainbow.classList.remove('buttonClicked')
     } else {
         rainbowOn = true;
+        eraserOn = false;
+        eraser.classList.remove('buttonClicked')
+        brushOn = false;
+        brush.classList.remove('buttonClicked')
+        shadeOn = false;
+        shade.classList.remove('buttonClicked')
         rainbow.classList.add('buttonClicked')
     }
 }
@@ -85,6 +103,12 @@ function shadeGrid() {
         shade.classList.remove('buttonClicked')
     } else {
         shadeOn = true;
+        eraserOn = false;
+        eraser.classList.remove('buttonClicked')
+        rainbowOn = false;
+        rainbow.classList.remove('buttonClicked')
+        brushOn = false;
+        brush.classList.remove('buttonClicked')
         shade.classList.add('buttonClicked')
     }
 }
@@ -115,11 +139,11 @@ function manipulateGrid(gridSystem, color) {
         if (mouseClick == true && brushOn == true && eraserOn == false) {
             this.style.cssText = `background-color: ${color};`
         }
-        
+
         if (mouseClick == true && shadeOn == true) {
-            e.target.style.cssText = `background-color: ${color};filter: opacity(${shadeColor+=0.1}%)`
+            e.target.style.cssText = `background-color: ${color};filter: opacity(${shadeColor += 0.1}%)`
         }
-        
+
         if (mouseClick == true && eraserOn == true && brushOn == false) {
             this.style.cssText = `background-color: aliceblue;`
         }

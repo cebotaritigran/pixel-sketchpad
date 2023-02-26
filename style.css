@@ -7,35 +7,40 @@ body {
   padding: 0;
   height: 100vh;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   gap: 50px;
+  flex-wrap: wrap;
+  background-color: rgb(41, 53, 67);
+}
+
+.containerContent{
+  display: flex;
   flex-direction: column;
-  background-color: #1b1a21;
 }
 
 .title {
   margin-top: 0;
+
   padding: 10px;
   font-size: 62px;
   font-weight: 560;
-  background-color: rgb(37, 43, 51);
   color: #ffffff;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-shadow:2px 2px #ff3b3b;
+  text-shadow:2px 3px #ff3b3b;
   cursor:default;
 }
 
 .title:hover{
-  text-shadow:2px 2px #43adfe;
+  text-shadow:3px 3px #43adfe;
 }
 
 
 .container {
   display: flex;
   justify-content: center;
-
+  align-items: center;
+  flex-direction: column;
   flex: 1;
   
 }
@@ -43,7 +48,7 @@ body {
 .main {
 
   flex: 1 0 0;
-  background-color: rgb(37, 43, 51);
+  background-color: #1a1e23;
   padding: 20px;
   border-radius: 10px;
   max-width: 100vh;
@@ -51,17 +56,20 @@ body {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  box-shadow: 15px 15px rgb(0, 0, 0);
+  
 }
 
 .footer{
   font-size: 36px;
-  background-color: rgb(37, 43, 51);
+
+  margin-top: 10px;
   display: flex;
-  justify-content: center;
-  padding: 10px;
+  justify-content: flex-end;
 }
 
 a{
+  text-align: left;
   text-decoration: none;
   color: #ffffff;
   text-shadow:1px 1px #ff3b3b;
@@ -146,7 +154,7 @@ button:hover{
   display: grid;
   width: 500px;
   height: 500px;
-  cursor: pointer;
+  cursor:default;
 }
 
 @media screen and (max-width: 400px) {

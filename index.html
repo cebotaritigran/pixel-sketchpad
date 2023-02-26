@@ -13,26 +13,27 @@
 </head>
 
 <body>
-    <div class="title">PIXEL SKETCHPAD</div>
-    <div class="container">
-        <div class="main">
-            <div class="buttons">
-                <input class="colorPicker" type="color" id="colorPicker" value="#000000">
-                <button id="brush">Brush</button>
-                <button id="rainbow">Rainbow</button>
-                <button id="shade">Soft Brush</button>
-                <button id="eraser">Eraser</button>
-                <button id="reset">Reset</button>
-                <input type="range" min="1" max="80" value="16" id="gridSize" class="gridSize">
-                <p class="gridSizeShow" id="gridSizeShow"></p>
-            </div>
-            <div class="sketchPad">
-                <div id="gridContainer" class="gridContainer" ondragstart="return false;"></div>
+    <div class="containerContent">
+        <div class="title">PIXEL SKETCHPAD</div>
+        <div class="container">
+            <div class="main">
+                <div class="buttons">
+                    <input class="colorPicker" type="color" id="colorPicker" value="#000000">
+                    <button id="brush">Brush</button>
+                    <button id="rainbow">Rainbow</button>
+                    <button id="shade">Soft Brush</button>
+                    <button id="eraser">Eraser</button>
+                    <button id="reset">Reset</button>
+                    <input type="range" min="1" max="80" value="16" id="gridSize" class="gridSize">
+                    <p class="gridSizeShow" id="gridSizeShow"></p>
+                </div>
+                <div class="sketchPad">
+                    <div id="gridContainer" class="gridContainer" ondragstart="return false;"></div>
+                </div>
             </div>
         </div>
+        <div class="footer"><a href="https://github.com/cebotaritigran">Tigran Cebotari</a></div>
     </div>
-    <div class="footer"><a href="https://github.com/cebotaritigran">Tigran Cebotari</a></div>
-
 </body>
 
 </html>

@@ -8,13 +8,11 @@ let mouseClick = false;
 let shadeColor = 10;
 function mouseDown() {
     mouseClick = true;
-    shadeColor += 3;
 }
 
 function mouseUp() {
     mouseClick = false;
-    shadeColor += 3;
-
+    shadeColor = 10;
 }
 
 const gridBoxSelect = document.querySelector('.gridContainer');
@@ -108,16 +106,20 @@ reset.addEventListener('click', () => {
 // which we check with event listener on that div
 // and paint the that div to black or erase if eraser button is on
 
+
+
 function manipulateGrid(gridSystem, color) {
-    
+
     const gridBox = document.querySelectorAll('.gridBox');
-    function manipulateGridBox() {
+    function manipulateGridBox(e) {
         if (mouseClick == true && brushOn == true && eraserOn == false) {
             this.style.cssText = `background-color: ${color};`
         }
+        
         if (mouseClick == true && shadeOn == true) {
-            this.style.cssText = `background-color: ${color};filter: opacity(${shadeColor}%)`
+            e.target.style.cssText = `background-color: ${color};filter: opacity(${shadeColor+=0.1}%)`
         }
+        
         if (mouseClick == true && eraserOn == true && brushOn == false) {
             this.style.cssText = `background-color: aliceblue;`
         }
@@ -131,7 +133,6 @@ function manipulateGrid(gridSystem, color) {
     for (let i = 0; i < gridSystem; i++) {
         gridBox[i].addEventListener('mouseover', manipulateGridBox);
     }
-
 }
 
 // we add an event listener to our input range html element and whenever there is an input we go ahead and clear
